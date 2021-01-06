@@ -3,7 +3,7 @@
 * git init . 初始化
 * git clone [url] 克隆
 * git add . 添加所有至待发送区
-* git commit -m [message] 添加标记
+* git commit -am "[message]" 添加标记
 * git push 更新
 * git status 查看状态
 * git shortlog -sn x 显示所有提交过的用户
