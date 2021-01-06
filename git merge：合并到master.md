@@ -12,7 +12,7 @@
 
 大致流程讲解：创建新分支，将自己写好的代码提交到该分支上，然后切回master分支，使用git merge 新分支名称 ,最后将本地合并之后的代码同步到master、
 
-————————————
+-------------
 
 1、新建分支jet5fly,并切换到新分支
 
@@ -25,19 +25,27 @@ git checkout -b jet5fly
 
 使用git branch，查看当前分支。
 
+---------
+
 2、开发完提交到远程分支 **(修改代码之前一定要最先执行pull操作)**
 
 git add .
  git commit -m "commit infomation"
  git push origin jet5fly
 
+-----------------
+
 3、返回master
 
 git checkout master
 
+---------------
+
 4、把本地分支合并到master
 
 git merge jet5fly
+
+----------------
 
 5、把本地合并后的master同步到远程
 
