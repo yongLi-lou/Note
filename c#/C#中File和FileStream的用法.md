@@ -43,3 +43,58 @@
 ```
 
 <img src="../img/13.png"></img>
+
+```c#
+3.文件流
+3.1文件流文字形式读取
+
+1. byte[] bytsize = new byte[1024 * 1024 * 5];
+2. using (FileStream stream = new FileStream(path, FileMode.OpenOrCreate,FileAccess.ReadWrite))
+3. {
+4. while (true)
+5. {
+6. int r = stream.Read(bytsize, 0, bytsize.Length);
+7. //如果读取到的字节数为0，说明已到达文件结尾，则退出while循
+8. if (r == 0)
+9. {
+10. break;
+11. }
+12. string str = Encoding.Default.GetString(bytsize, 0, r);
+13. Console.WriteLine(str);
+14. }
+15. }
+3.2文件流文字形式写入
+
+1. string str = "今天天气好晴朗，处处好风光";
+2. byte[] buttf = Encoding.Default.GetBytes(str);
+3. //文件流的写入
+4. using (FileStream fscreat = new FileStream(path, FileMode.Append, FileAccess.Write))
+5. {
+6. fscreat.Write(buttf, 0, buttf.Length);
+7. }
+3.3文件流视频形式复制
+
+1. byte[] bytsize = new byte[1024 * 1024 * 5];       
+2. string videoPath = @"C:\Users\Administrator\Desktop\1、练习1-3.avi";
+3. string videoNewPath = @"C:\Users\Administrator\Desktop\1.avi";
+4. //创建读取流
+5. using (FileStream fsread=new FileStream(videoPath,FileMode.Open,FileAccess.Read))
+6. {
+7. //创建写入流
+8. using (FileStream fswrite=new FileStream(videoNewPath,FileMode.OpenOrCreate,FileAccess.Write))
+9. {
+10. while (true)
+11. {
+12. //返回实际读取到的字节
+13. int r = fsread.Read(bytsize, 0, bytsize.Length);
+14. //当字节位0的时候 证明已经读取结束
+15. if(r==0){
+16. break;
+17. }
+18. fswrite.Write(bytsize,0,r);
+19. }
+20. }
+21. }
+
+```
+
