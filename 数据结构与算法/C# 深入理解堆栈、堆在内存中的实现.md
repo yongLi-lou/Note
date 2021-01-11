@@ -122,13 +122,12 @@ public int AddFive(int pValue)
 
 假如我们有这样一个MyInt类（它是引用类型因为它是一个类类型）：
 
-    ``` c#
+```c#
 public class MyInt
      {     
        publicint MyValue;
      }
-    ```
-
+```
 然后执行下面的方法:
 
 ```c#
