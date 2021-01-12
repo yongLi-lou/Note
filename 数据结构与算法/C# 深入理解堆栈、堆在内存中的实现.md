@@ -10,7 +10,7 @@
 
 可以将栈想象成一堆从顶向下堆叠的盒子。当每调用一次方法时，我们将应用程序中所要发生的事情记录在栈顶的一个盒子中,而我们每次只能够使用栈顶的那个盒子。当我们栈顶的盒子被使用完之后，或者说方法执行完毕之后，我们将抛开这个盒子然后继续使用栈顶上的新盒子。堆的工作原理比较相似，但大多数时候堆用作保存信息而非保存执行路径，因此堆能够在任意时间被访问。与栈相比堆没有任何访问限制，堆就像床上的旧衣服，我们并没有花时间去整理，那是因为可以随时找到一件我们需要的衣服，而栈就像储物柜里堆叠的鞋盒，我们只能从最顶层的盒子开始取，直到发现那只合适的。
 
-![img](http://img.blog.csdn.net/20161201135937482?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+<img src="../img/33.gif" />
 
 以上图片并不是内存中真实的表现形式，但能够帮助我们区分栈和堆。
 
@@ -56,7 +56,7 @@ string
 
 在内存管理方案中放置的第三种类型是类型引用，引用通常就是一个指针。我们不会显示的使用指针，它们由公共语言运行时（CLR）来管理。指针（或引用）是不同于引用类型的，是因为当我们说某个事物是一个引用类型时就意味着我们是通过指针来访问它的。指针是一块内存空间，而它指向另一个内存空间。就像栈和堆一样，指针也同样要占用内存空间，但它的值是一个内存地址或者为空。
 
-![img](http://img.blog.csdn.net/20161201140032807?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+<img src="../img/34.gif" />
 
  
 
@@ -94,24 +94,24 @@ public int AddFive(int pValue)
 
 首先方法（只包含需要执行的逻辑字节，即执行该方法的指令，而非方法体内的数据）入栈，紧接着是方法的参数入栈。（我们将在后面讨论更多的参数传递）
 
-![img](http://img.blog.csdn.net/20161201140144610?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+<img src="../img/35.gif" />
 
 接着，控制（即执行方法的线程）被传递到堆栈中AddFive()的指令上，
 
-![img](http://img.blog.csdn.net/20161201140151063?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+<img src="../img/36.gif" />
 
 当方法执行时，我们需要在栈上为“result”变量分配一些内存，
 
-![img](http://img.blog.csdn.net/20161201140157016?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+<img src="../img/37.gif" />
 
 
 方法执行完成，然后方法的结果被返回。
 
-![img](http://img.blog.csdn.net/20161201140333221?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+<img src="../img/38.gif" />
 
 通过将栈指针指向AddFive()方法曾使用的可用的内存地址，所有在栈上的该方法所使用内存都被清空，且程序将自动回到栈上最初的方法调用的位置(在本例中不会看到)。
 
-![img](http://img.blog.csdn.net/20161201140339627?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+<img src="../img/39.gif" />
 
  
 
@@ -143,7 +143,7 @@ public MyInt AddFive(int pValue)
 
 就像前面提到的，方法及方法的参数被放置到栈上，接下来，控制被传递到堆栈中AddFive()的指令上。
 
-![img](http://img.blog.csdn.net/20161201140446691?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+<img src="../img/40.gif" />
 
  
 
@@ -151,15 +151,15 @@ public MyInt AddFive(int pValue)
 
 因为"MyInt"是一个引用类型,它将被放置在堆上,同时在栈上生成一个指向这个堆的指针引用。
 
-![img](http://img.blog.csdn.net/20161201140604161?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+<img src="../img/41.gif" />
 
 在AddFive()方法被执行之后，我们将清空...
 
-![img](http://img.blog.csdn.net/20161201140611763?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+<img src="../img/42.gif" />
 
 我们将剩下孤独的MyInt对象在堆中（栈中将不会存在任何指向MyInt对象的指针!）
 
-![img](http://img.blog.csdn.net/20161201140617787?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+<img src="../img/43.gif" />
 
  
 
@@ -218,8 +218,8 @@ public int ReturnValue2()
 
 在第一例子中，一切都像计划的那样进行着：
 
-![img](http://img.blog.csdn.net/20161201140810139?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+<img src="../img/44.gif" />
 
 在第二个例子中，我们没有得到"3"是因为变量"x"和"y"都同时指向了堆中相同的对象。
 
-![img](http://img.blog.csdn.net/20161201140906171?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+<img src="../img/45.gif" />
