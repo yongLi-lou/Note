@@ -1,7 +1,12 @@
 # C# DataTable转实体类
 
-方法1:直接使用sqlQuery<T> 连表查询也可以用
+方法1:定义sqlQuery<T> 拓展方法，连表查询也可以用
 ```c#
+public static List<T> SqlQuery<T>(this DatabaseFacade facade, string sql, DbTransaction db = null, params object[] parameters) where T : class, new()
+        {
+            var dt = SqlQuery(facade, sql, db, parameters);
+            return dt.ToList<T>();
+        }
 var data = db.Database.SqlQuery<Order_Order>(sql);
 ```
 
