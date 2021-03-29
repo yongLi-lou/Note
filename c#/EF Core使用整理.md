@@ -7,7 +7,7 @@
 
 **Micorsoft.EntityFrameworkCore：EF框架的核心包**
 
-**Micorsoft.EntityFrameworkCore.SqlServer:针对SqlServer数据库的扩展，使用SqlServer数据库必须。类似的还有MySql，SqlLite等**
+**Micorsoft.EntityFrameworkCore.SqlServer:针对SqlServer数据库的扩展，使用SqlServer数据库必须。类似的还有MySql，SqlLite等**//Pomelo.EntityFrameworkCore.MySql
 
 > 一、CodeFirst 
 >
