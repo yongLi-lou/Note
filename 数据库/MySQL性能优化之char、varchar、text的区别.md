@@ -41,3 +41,13 @@ text：
 PS： 由于varchar查询速度更快， 能用varchar的时候就不用text。
 
 顺便提一句： 当表有成百上千万条数据时， 就要使用MySQL的分区(partition)功能， 原理有点像分治算法，就是将数据切割成多个部分。
+
+总结起来，有几点：
+
+
+
+1. 经常变化的字段用varchar
+2. 知道固定长度的用char
+3. 尽量用varchar
+4. 超过255字符的只能用varchar或者text
+5. 能用varchar的地方不用text
