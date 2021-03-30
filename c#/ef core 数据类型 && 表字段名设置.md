@@ -4,7 +4,7 @@
 
 HasColumnType是指定字段类型
 
-```
+```c#
 [Column(TypeName = "decimal(18, 2)")]
 
 
@@ -17,7 +17,7 @@ public decimal Money { get; set; }
 
 
 
-builder.Property(a => a.Money).HasColumnType("decimal(18, 2)");
+modelBuilder.Entity<SysUser>().Property(e => e.Name).HasColumnType("CHAR(15)");
 ```
 
 #### HasColumnName
@@ -25,6 +25,7 @@ builder.Property(a => a.Money).HasColumnType("decimal(18, 2)");
 HasColumnName是指定表字段名
 比如说属性名字叫Money,但是你希望表字段名全是小写,所以HasColumnName("money")
 
+```c#
+modelBuilder.Entity<SysUser>().Property(e => e.Name).HasColumnName("money");
 ```
-builder.Property(a => a.Money).HasColumnName("money");
-```
+
