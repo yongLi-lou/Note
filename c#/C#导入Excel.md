@@ -118,9 +118,13 @@
                                         case "环卫公司管理员":
                                             user.UserType = SysUserRole.SanitationMan;
                                             break;
+                                        case "村巡察员":
+                                            user.UserType = SysUserRole.Patroler;
+                                            break;
                                         default:
                                             user.UserType = SysUserRole.Other;
                                             break;
+                                        
                                     }
                                     /*user.UserType = EnumHelper.ToEnum<SysUserRole>(row.GetCell(5).ToString(), SysUserRole.Other);*/
                                 }
@@ -129,6 +133,10 @@
                                 Data.Add(user);
                             }
 
+                        }
+                        else
+                        {
+                            return Fail(ReturnValue);
                         }
                         var userdomain = new SysUserDoMain();
                         userdomain.AddRange(Data);
