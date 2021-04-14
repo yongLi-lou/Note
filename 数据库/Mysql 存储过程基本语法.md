@@ -209,19 +209,54 @@ MySQL 存储过程参数如果不显式指定“in”、“out”、“inout”�
 DROP PROCEDURE IF EXISTS Proc_Change;
 CREATE PROCEDURE Proc_Change (id CHAR(4),toid CHAR(4),money INT,OUT msg VARCHAR(20))
 BEGIN
-DECLARE _error INT DEFAULT 0;
-DECLARE CONTINUE  HANDLER FOR SQLEXCEPTION,SQLWARNING set _error = 1;
-UPDATE bank SET bank.balance=bank.balance-money WHERE bank.cId=id;
-UPDATE bank SET bank.balance=bank.balance+money WHERE bank.cId=toid;
-IF _error = 1 THEN
-SET msg='转账失败';
-ROLLBACK;
+	#Routine body goes here...
+ -- 定义一个变量来保存用户的余额
+	DECLARE vbalance double;
+-- 定义受影响的行的结果	
+ DECLARE result int;
+  set result=0;
+-- 查询余额看下 是否满足转账
+select bank.balance INTO vbalance FROM bank WHERE cid= fromid;
+-- 加入条件判断
+ if(vbalance-money>=0)THEN
+-- 可以进行转账操作
+-- 开启事务
+start TRANSACTION;
+UPDATE bank set balance =balance - money WHERE cid = id;
+-- 记录每次update受影响的行
+if(ROW_COUNT()=1)THEN
+set result = result+1;
+end if;
+UPDATE bank set balance =balance + monet WHERE cid = toid;
+-- 记录每次update受影响的行
+if(ROW_COUNT()=1)THEN
+set result = result+1;
+end if;
+if(result=2)then
+-- 提交事务
+set flag = '转账成功！';
+commit;
 ELSE
-set msg='转账成功';
-COMMIT;
-END IF;
+-- 回滚
+set flag='转账失败，事务回滚';
+ROLLBACK;
+end if;
+ELSE
+-- 余额不足
+SET flag = '转账失败，余额不足';
+end if;
+
 END
 
+```
+
+调用
+
+```sql
+CALL p11(1,3,10,@msg);
+SELECT @msg;
+
+select * from customer; 
 ```
 
 
