@@ -1,0 +1,12 @@
+# MySql Long与日期相互转换
+
+```sql
+SELECT FROM_UNIXTIME( 1527476643, '%Y%m%d' );
+SELECT FROM_UNIXTIME( 1527476643, '%Y年%m月%d' );
+SELECT FROM_UNIXTIME( 1527476643, '%Y-%m-%d %H:%i:%s' );
+
+
+SELECT UNIX_TIMESTAMP(); -- 获取当前时间的秒数
+SELECT UNIX_TIMESTAMP('2018-05-28 11:04:03'); -- //获取指定日期格式的秒数
+SELECT UNIX_TIMESTAMP('2018-05-28'); -- //获取指定日期格式的秒数
+```
