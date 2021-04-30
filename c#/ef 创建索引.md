@@ -3,7 +3,7 @@
 # ef 创建索引
 
 ```c#
-[Index(nameof(Url))]
+[Index(Name ="Url",Unique =true)]
 public class Blog
 {
     public int BlogId { get; set; }
