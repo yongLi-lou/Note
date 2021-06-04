@@ -19,7 +19,7 @@ namespace Fleck.Samples.ConsoleApp
         {
             FleckLog.Level = LogLevel.Debug;
             var allSockets = new List<IWebSocketConnection>();
-            var server = new WebSocketServer("ws://10.10.10.99:50000");
+            var server = new WebSocketServer("ws://127.0.0.1:50000");
             server.Start(socket =>
                 {
                     socket.OnOpen = () =>
@@ -57,7 +57,7 @@ namespace Fleck.Samples.ConsoleApp
 
 ## h5端
 ```js
-ws = new WebSocket("ws://10.10.10.99:50001");
+ws = new WebSocket("ws://127.0.0.1:50000");
 ws.onopen = function() { 
     ws.send('websocekt测试'); 
 };
@@ -65,4 +65,6 @@ ws.onmessage = function(e) {
     alert("收到服务端的消息：" + e.data);
 };
 ```
+
+**使用ipv4**
 
