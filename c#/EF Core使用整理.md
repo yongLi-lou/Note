@@ -87,3 +87,4 @@ dotnet ef migrations add Initial -c DemoDbContext
 执行命令生成数据库
 
 dotnet ef database update -c DemoDbContext
+

@@ -8,5 +8,5 @@ COPY dist /app
 ENTRYPOINT ["dotnet", "TemplateApi.dll"]
 ```
 
-先执行<code>dot net publish --output dist</code>
+先执行<code>dot net publish --output dist .</code>
 
