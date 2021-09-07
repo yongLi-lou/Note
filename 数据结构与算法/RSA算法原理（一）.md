@@ -76,65 +76,28 @@
 
 φ(n) 的计算方法并不复杂，但是为了得到最后那个公式，需要一步步讨论。
 
-**第一种情况**
 
-如果n=1，则 φ(1) = 1 。因为1与任何数（包括自身）都构成互质关系。
 
-**第二种情况**
 
-如果n是质数，则 φ(n)=n-1 。因为质数与小于它的每一个数，都构成互质关系。比如5与1、2、3、4都构成互质关系。
 
-**第三种情况**
+## 2.欧拉函数
 
-如果n是质数的某一个次方，即 n = p^k (p为质数，k为大于等于1的整数)，则
+ 欧拉函数是求小于**x**并且和**x**互质的数的个数。其通式为：**φ(x) = x(1-1/p1)(1-1/p2)(1-1/p3)(1-1/p4)…..(1-1/pn)**。
 
-![img](https://chart.googleapis.com/chart?cht=tx&chl=%5Cphi(p%5E%7Bk%7D)%3Dp%5E%7Bk%7D-p%5E%7Bk-1%7D&chs=40)
+ 其中**p1, p2……pn**为x的所有质因数，**x**是不为0的整数。看到这里是不是有一些头疼，太理论的东西的确不够具象。我们且不去理会后面公式计算与论证，因为已经超出本文的范围了。就前一句来说说吧，*欧拉函数是求小于x并且和x互质的数的个数*。这里我可以列举一个例子：
 
-比如 φ(8) = φ(2^3) =2^3 - 2^2 = 8 -4 = 4。
+ 令x = 16，那么x的所有质因数为：**φ(16) = 16 \* (1 - 1/2) = 8**
 
-这是因为只有当一个数不包含质数p，才可能与n互质。而包含质数p的数一共有p^(k-1)个，即1×p、2×p、3×p、...、p^(k-1)×p，把它们去除，剩下的就是与n互质的数。
+ 我们也可以枚举出所有比16小，且与16互质的数：**1, 3, 5, 7, 9, 11, 13, 15**
 
-上面的式子还可以写成下面的形式：
+ 现在也给出部分欧拉函数的性质：
 
-![img](https://chart.googleapis.com/chart?cht=tx&chl=%5Cphi(p%5E%7Bk%7D)%3Dp%5E%7Bk%7D-p%5E%7Bk-1%7D%3Dp%5E%7Bk%7D(1-%5Cfrac%7B1%7D%7Bp%7D)&chs=60)
+ 
 
-可以看出，上面的第二种情况是 k=1 时的特例。
-
-**第四种情况**
-
-如果n可以分解成两个互质的整数之积，
-
-> 　　n = p1 × p2
-
-则
-
-> 　　φ(n) = φ(p1p2) = φ(p1)φ(p2)
-
-即积的欧拉函数等于各个因子的欧拉函数之积。比如，φ(56)=φ(8×7)=φ(8)×φ(7)=4×6=24。
-
-这一条的证明要用到["中国剩余定理"](https://en.wikipedia.org/wiki/Chinese_remainder_theorem)，这里就不展开了，只简单说一下思路：如果a与p1互质(a<p1)，b与p2互质(b<p2)，c与p1p2互质(c<p1p2)，则c与数对 (a,b) 是一一对应关系。由于a的值有φ(p1)种可能，b的值有φ(p2)种可能，则数对 (a,b) 有φ(p1)φ(p2)种可能，而c的值有φ(p1p2)种可能，所以φ(p1p2)就等于φ(p1)φ(p2)。
-
-**第五种情况**
-
-因为任意一个大于1的正整数，都可以写成一系列质数的积。
-
-![img](https://chart.googleapis.com/chart?cht=tx&chl=n%3Dp_%7B1%7D%5E%7Bk_%7B1%7D%7Dp_%7B2%7D%5E%7Bk_%7B2%7D%7D...p_%7Br%7D%5E%7Bk_%7Br%7D%7D&chs=40)
-
-根据第4条的结论，得到
-
-![img](https://chart.googleapis.com/chart?cht=tx&chl=%5Cphi(n)%3D%5Cphi(p_%7B1%7D%5E%7Bk_%7B1%7D%7D)%5Cphi(p_%7B2%7D%5E%7Bk_%7B2%7D%7D)...%5Cphi(p_%7Br%7D%5E%7Bk_%7Br%7D%7D)&chs=40)
-
-再根据第3条的结论，得到
-
-![img](https://chart.googleapis.com/chart?cht=tx&chl=%5Cphi(n)%3Dp_%7B1%7D%5E%7Bk_%7B1%7D%7Dp_%7B2%7D%5E%7Bk_%7B2%7D%7D...p_%7Br%7D%5E%7Bk_%7Br%7D%7D(1-%5Cfrac%7B1%7D%7Bp_%7B1%7D%7D)(1-%5Cfrac%7B1%7D%7Bp_%7B2%7D%7D)...(1-%5Cfrac%7B1%7D%7Bp_%7Br%7D%7D)&chs=60)
-
-也就等于
-
-![img](https://chart.googleapis.com/chart?cht=tx&chl=%5Cphi(n)%3Dn(1-%5Cfrac%7B1%7D%7Bp_%7B1%7D%7D)(1-%5Cfrac%7B1%7D%7Bp_%7B2%7D%7D)...(1-%5Cfrac%7B1%7D%7Bp_%7Br%7D%7D)&chs=60)
-
-这就是欧拉函数的通用计算公式。比如，1323的欧拉函数，计算过程如下：
-
-![img](https://chart.googleapis.com/chart?cht=tx&chl=%5Cphi(1323)%3D%5Cphi(3%5E%7B3%7D%5Ctimes7%5E%7B2%7D)%3D1323(1-%5Cfrac%7B1%7D%7B3%7D)(1-%5Cfrac%7B1%7D%7B7%7D)%3D756&chs=60)
+- 若n是素数p的k次幂，![img](https://img-blog.csdn.net/20160229174736090)，因为除了p的倍数外，其他数都跟n互质
+- 欧拉函数是积性函数——若m,n互质，![img](https://img-blog.csdn.net/20160229174744778)
+- 当n为奇数时，![img](https://img-blog.csdn.net/20160229174753122)
+- p是素数，![img](https://img-blog.csdn.net/20160229174946437)，φ(p)称为p的欧拉值
 
 **四、欧拉定理**
 
