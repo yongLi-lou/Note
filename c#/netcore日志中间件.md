@@ -20,6 +20,10 @@ public class LogMiddleware
             _data = new SortedDictionary<string, object>();
 
             HttpRequest request = context.Request;
+            //不用nginx
+            _data.Add("request.ip", context.Connection.RemoteIpAddress.ToString());
+            /*//用nginx
+            _data.Add("request.ip", context.Request.Headers["X-Real-IP"].FirstOrDefault());*/
             _data.Add("request.url", string.Format(request.Path.ToString()));
             _data.Add("request.headers", request.Headers.ToDictionary(x => x.Key, v => string.Join(";", v.Value.ToList())));
             _data.Add("request.method", request.Method);
