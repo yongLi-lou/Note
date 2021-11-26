@@ -38,3 +38,13 @@ git config --global credential.helper store
 
 
 然后保存就可以了。
+```
+
+或者：
+
+```git
+git config --global user.name "你的用户名"
+
+git config --global user.email 你的邮箱
+```
+
