@@ -1,0 +1,94 @@
+{
+  "main": {
+    "id": "7ed05f3a91314484",
+    "type": "split",
+    "children": [
+      {
+        "id": "be6ff116ec90cf68",
+        "type": "leaf",
+        "state": {
+          "type": "graph",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "54ec58a30c24c949",
+    "type": "split",
+    "children": [
+      {
+        "id": "d2deb889931a74cd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dfd289007091615c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "d915fe85094744da",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "da48fff133ab5b0f",
+    "type": "split",
+    "children": [
+      {
+        "id": "c493d83051d2a675",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7916d750f30fdd39",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "be6ff116ec90cf68",
+  "lastOpenFiles": [
+    "c.md",
+    "tips/markdown流程图.md",
+    "tips/一次高并发的经历.md",
+    "c#/使用异或运算做简单的对称加密.md",
+    "c#/表达式树Expression.md",
+    "分布式/分布式架构的总结.md"
+  ]
+}
