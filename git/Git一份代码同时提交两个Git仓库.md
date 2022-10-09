@@ -50,3 +50,13 @@ orgin   https://gitee.com/youngforever1728/my-java.git (push)
 	url = 新地址 // ### 这里添加多一个新仓库地址 ###
 ```
 
+
+
+
+
+# 删除仓库origin
+
+```shell
+git remote rm origin
+```
+
