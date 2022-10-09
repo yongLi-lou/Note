@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "数据库/mysql修改表enum_在整个表中更改MySQL ENUM值的值.md",
+            "file": "数据结构与算法/顺序存储结构与链式存储结构的优缺点.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "数据库/mysql修改表enum_在整个表中更改MySQL ENUM值的值.md",
+                "file": "数据结构与算法/顺序存储结构与链式存储结构的优缺点.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,17 +87,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "dfd289007091615c",
+  "active": "36d35c303fe2c12d",
   "lastOpenFiles": [
-    "c#/c#RSA2数字签名.md",
-    "tips/一、面临的问题： 密钥分发.md",
-    "c#/netcore2.x下 RSA加解密错误Operation is not supported on this platform.md",
-    "c#/RSA公钥密钥XML--PEM互转.md",
-    "c#/C#报错信息：Nullable object must have a value.md",
-    "c#/Excel使用NPOI导出图片.md",
-    "c#/C#导入Excel.md",
+    "数据结构与算法/冒泡排序.md",
+    "数据结构与算法/数据结构：八大数据结构分类.md",
+    "数据库/[Err] 1055 - Expression #1.md",
+    "数据库/大数据量分页查询优化.md",
+    "数据库/redis事务控制.md",
+    "数据库/Mysql权限问题 Access denied； you need (at least one of) the RELOAD privilege(s) for this operation.md",
+    "数据库/delete后加 limit是个好习惯.md",
+    "数据库/系统权限设计的5张表.md",
     "数据库/mysql修改表enum_在整个表中更改MySQL ENUM值的值.md",
-    "c#/Quartz.Net定时任务在IIS中不执行或多次执行解决方法.md",
-    "c#/Singleton,Transient,Scoped 的作用域是如何实现的.md"
+    "c#/c#RSA2数字签名.md"
   ]
 }
