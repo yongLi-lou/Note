@@ -45,3 +45,15 @@
                Console.WriteLine("写入线圈状态。。。");
                master.WriteSingleCoil(1,0,! bool_data[0]!);
    ```
+
+5. 如果是使用网口通讯.使用ModbusTcp包
+
+6. ```c#
+               ModbusClient client = new ModbusClient("127.0.0.1",502);
+               client.Init();
+              
+                       var data =client.ReadRegistersAsync(0,2).Result;
+                       Console.WriteLine(data[0] + "" + data[1]);
+   ```
+
+   
