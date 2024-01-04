@@ -10,3 +10,9 @@ echo "API Start"
 exit
 ```
 
+如果是iis
+
+```bash
+iisreset <name> /restart
+```
+
