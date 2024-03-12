@@ -49,3 +49,20 @@ git checkout dev folder/
 ```bash
 git commit -m "Merged folder/ from dev branch"
 ```
+
+### 如果出现找不到文件的情况
+
+1. `appsettings.json`文件可能不存在于`forSAP`分支中。你可以切换到`forSAP`分支并使用`ls`或`dir`命令查看文件是否存在。
+2. 你可能在错误的目录中运行此命令。确保你在包含`appsettings.json`文件的目录中。
+3. `appsettings.json`文件可能在一个子目录中。如果是这种情况，你需要提供文件的相对路径，例如`git checkout forSAP subdirectory/appsettings.json`。
+
+```bash
+C:\Users\LYL\Work\Work\cy_mes>git checkout forSAP appsettings.json
+error: pathspec 'appsettings.json' did not match any file(s) known to git
+
+C:\Users\LYL\Work\Work\cy_mes>git checkout forSAP C:\Users\LYL\Work\Work\cy_mes\cy_mes\appsettings.json
+Updated 1 path from d9ece0b
+```
+
+
+
